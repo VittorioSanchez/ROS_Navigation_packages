@@ -1,0 +1,12 @@
+<launch>
+	<group ns="tf_lidar">
+	       <!-- Broadcasts the transform from "lidar_link" to "base_link" -->
+               <node pkg="robot_setup_tf" type="tf_broadcaster" name="tf_broadcaster"/>
+
+	       <!-- Suscribes to the "laser" topic and transform an incoming message from the "laser_link" to the "base_link" using the broadcasted transform and then publish it on the "tf_laser" topic -->
+               <node pkg="robot_setup_tf" type="tf_listener" name="tf_listener"/>
+
+	       <!-- Broadcasts fake Lidar PointCloud messages on the "laser" topic -->
+               <node pkg="robot_setup_tf" type="point_cloud_publisher" name="PointCloud_publisher"/>
+	</group>
+</launch>

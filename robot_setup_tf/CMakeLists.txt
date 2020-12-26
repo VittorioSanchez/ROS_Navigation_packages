@@ -9,6 +9,7 @@ project(robot_setup_tf)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
+  sensor_msgs
   roscpp
   tf
 )
@@ -207,5 +208,8 @@ include_directories(
 
 add_executable(tf_broadcaster src/tf_broadcaster.cpp)
 add_executable(tf_listener src/tf_listener.cpp)
+add_executable(point_cloud_publisher src/PointCloud_publisher.cpp)
+
 target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
 target_link_libraries(tf_listener ${catkin_LIBRARIES})
+target_link_libraries(point_cloud_publisher ${catkin_LIBRARIES})

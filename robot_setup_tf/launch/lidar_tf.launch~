@@ -1,0 +1,5 @@
+<launch>
+	<!-- Broadcasts the transform from "lidar_link" to "base_link" -->
+        <node pkg="robot_setup_tf" type="tf_broadcaster.cpp" name="tf_broadcaster" ns="tf_lidar">
+
+</launch>
